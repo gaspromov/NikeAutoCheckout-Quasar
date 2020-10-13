@@ -58,7 +58,7 @@ function setValueInput(value){                                                  
 
 async function doFilling(start, end, profile){                                                     // filling inputs from start to end input
     for (let i=start; i <= end; i++){
-            if (i !=5 && i !=6)
+            if (i !=6)
                 setTimeout(() => {
                     setCurrentInput(ids[i]);
                     setValueInput(profile[i])

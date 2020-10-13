@@ -313,6 +313,7 @@ input.invalid {
   display: inline-block;
   width: 30px;
   height: 17px;
+  align-self: start;
 }
 
 /* Hide default HTML checkbox */
