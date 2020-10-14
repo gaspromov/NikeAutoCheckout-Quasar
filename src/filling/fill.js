@@ -87,14 +87,14 @@ function setNewCard(){                                                          
 // }
 
 function clickCheckBox(){
-    document.querySelector('span.checkmark').click()
+    if (!document.querySelector('.gdpr-consent input').checked)
+        document.querySelector('.gdpr-consent span.checkmark').click()
 }
  
  
  function doFillingAll(profile){
     setTimeout(doFilling, 3000, 0, 9, profile);
     setTimeout(clickContinue, 18000)
-     
     setTimeout( setNewCard, 20000);
     setTimeout(doFilling, 24000, 10, 12, profile);
     setTimeout(clickContinue, 28000);
@@ -171,7 +171,6 @@ function timeout(t, h, m, s, ms){
 
  try{
     chrome.storage.local.get( 'time', (result) => {
-        console.log(result, result.time)
             let h = result.time.hours;
             let m = result.time.minutes;
             let s = result.time.seconds;
