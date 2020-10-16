@@ -17,6 +17,7 @@
        "matches": [ "*://gs.nike.com/*", "*://gs-payments.nike.com/*" ],
        "run_at": "document_start"
     }],
+    "content_security_policy": "script-src 'self' https://example.com 'sha256-[hash]'; object-src 'self'",
     "description": "Autofill for Nike. He fills out all the necessary fields on the Nike checkout.",
     "manifest_version": 2,
     "name": "Nike ACO by Cactus-web",
