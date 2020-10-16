@@ -1,0 +1,50 @@
+body{
+    grid-template-rows: 1fr;
+}
+.auth{
+    display: grid;
+    row-gap: 25px;
+    align-self: center;
+    justify-self: center;
+    place-items: center;
+}
+
+.auth .logo img{
+    width: 100px;
+}
+
+form{
+    display: grid;
+    row-gap: 10px;
+    place-items: center;
+}
+.auth h3{
+    font-size: 14px;
+    font-weight: 500;
+}
+.twoInOne{
+    width: 200px;
+}
+
+form button{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    right: 5px;
+    left: auto !important;
+    background-color: #3B5294;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+form input{
+    background: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 10px;
+}

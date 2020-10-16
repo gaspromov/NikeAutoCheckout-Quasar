@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nike ACO</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="auth.css">
+    <!-- Подключение библиотеки jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Подключение jQuery плагина Masked Input -->
+    <script src="assets/js/jquery.maskedinput.min.js"></script>
+</head>
+<body>
+
+    <div class="auth">
+        <div class="logo">
+            <img src="../icons/quasar.svg" alt="logo">
+        </div>
+        <form action="" method="dialog">
+            <h3>Activate the key</h3>
+
+            <div class="twoInOne">
+                <input type="text" name="key" autocomplete="off" id="key" placeholder="License key" >
+                <button type="submit" id="auth"><img src="./assets/img/arrow-auth.svg" alt="go"></button>
+            </div>
+        </form>
+    </div>
+    <!-- <script src="shared.js"></script> -->
+    <script>
+        $(function(){
+            $("#key").mask("****-****-****-****");
+        });
+
+    </script>
+    
+    <script src="auth.js"></script>
+</body>
+</html>

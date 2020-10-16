@@ -5,7 +5,7 @@ const ids = [                                                                   
     'firstName', 'middleName', 'lastName', 'addressLine1',
     'addressLine2', 'city', 'region', 'postCode', 'phone', 'email',                 //continue
     'cardNumber-input', 'cardExpiry-input', 'cardCvc-input'                         //continue
-]
+];
 
 
 const paramDispatch = {bubbles: true}; 
@@ -34,12 +34,12 @@ function setValue(elem, value){                                                 
  
 function dispatchEventFor(elem, param){                                             // do some event with input
     if (elem)
-        elem.dispatchEvent(new Event( param, this.paramDispatch ))
+        elem.dispatchEvent(new Event( param, this.paramDispatch ));
 }
 
 function blur(elem){                                                                // blur or unfocus to input
     if (elem)
-        elem.blur()
+        elem.blur();
 }
 
 
@@ -48,7 +48,7 @@ function setValueInput(value){                                                  
     focus(currentInput);
     // setTimeout(dispatchEventFor, 500, currentInput, 'keydown')
     setTimeout(() => {
-        dispatchEventFor(currentInput, 'keydown')
+        dispatchEventFor(currentInput, 'keydown');
         setValue(currentInput, value);
         dispatchEventFor(currentInput, 'change');                                       // event on change smth
         dispatchEventFor(currentInput, 'input');                                        // event on input
@@ -61,11 +61,11 @@ async function doFilling(start, end, profile){                                  
             if (i !=6)
                 setTimeout(() => {
                     setCurrentInput(ids[i]);
-                    setValueInput(profile[i])
+                    setValueInput(profile[i]);
                 }, i*1500);
             else{
                 setCurrentInput(ids[i]);
-                setValueInput(profile[i])
+                setValueInput(profile[i]);
             }
     }
 }
@@ -79,7 +79,7 @@ function clickContinue(){                                                       
  
 function setNewCard(){                                                              // setting new card
     if (document.querySelector('div.new-card-link'))
-        document.querySelector('div.new-card-link').click()
+        document.querySelector('div.new-card-link').click();
 }
 
 // function iframeInputs(){
@@ -88,18 +88,18 @@ function setNewCard(){                                                          
 
 function clickCheckBox(){
     if (!document.querySelector('.gdpr-consent input').checked)
-        document.querySelector('.gdpr-consent span.checkmark').click()
+        document.querySelector('.gdpr-consent span.checkmark').click();
 }
  
  
  function doFillingAll(profile){
     setTimeout(doFilling, 3000, 0, 9, profile);
-    setTimeout(clickContinue, 18000)
+    setTimeout(clickContinue, 18000);
     setTimeout( setNewCard, 20000);
     setTimeout(doFilling, 24000, 10, 12, profile);
     setTimeout(clickContinue, 28000);
 
-    setTimeout(clickCheckBox, 31000)
+    setTimeout(clickCheckBox, 31000);
  }
 
  function check(profile){
@@ -122,14 +122,14 @@ function clickCheckBox(){
  }
 
  function timeOutCheckIframe(profile){
-     setTimeout(checkIframe, 100, profile)
+     setTimeout(checkIframe, 100, profile);
  }
  
 function doCheck(h, m, s, ms){
     now = new Date();
     try{
     if (now.getHours() == h && now.getMinutes() == m && now.getSeconds() == s && now.getMilliseconds() >= ms || now.getHours() > h){
-        console.log(now.getSeconds(), ':', now.getMilliseconds())
+        console.log(now.getSeconds(), ':', now.getMilliseconds());
         document.querySelector("div.buttonContainer > button.button-submit").click();
     }else if (now.getHours() == h && now.getMinutes() == m && now.getSeconds() > (s-2)){
         timeout(10, h, m, s, ms);
@@ -142,7 +142,7 @@ function doCheck(h, m, s, ms){
 }
     
 function timeout(t, h, m, s, ms){
-    setTimeout(doCheck, t, h, m, s, ms)
+    setTimeout(doCheck, t, h, m, s, ms);
 }
     
 
@@ -160,7 +160,7 @@ function timeout(t, h, m, s, ms){
                let curr = [currentProfile.firstName, currentProfile.middleName, currentProfile.lastName, currentProfile.addressLine1,
                    currentProfile.addressLine2, currentProfile.city, currentProfile.region, currentProfile.postCode, currentProfile.phone, currentProfile.email,
                    currentProfile.cardNumber, currentProfile.cardExpiry, currentProfile.cardCvc
-               ]
+               ];
                start(curr);
            })
        }
@@ -179,5 +179,6 @@ function timeout(t, h, m, s, ms){
     } )
  }
  catch{}
+
 
 

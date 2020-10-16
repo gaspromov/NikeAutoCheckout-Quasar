@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike ACO</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="./shared.js"></script>
+</head>
+<body>
+    
+    <header>
+        <ul>
+            <li class="pointer active" id="release">Release</li>
+            <li class="pointer" id="profiles">Profiles</li>
+            <li class="pointer" id="settings">Settings</li>
+        </ul>
+    </header>
+
+    <section id="release" class="active standartPadding">
+
+        <div class="checkoutTime">
+            <form method="dialog">
+                <h3>Checkout time</h3>
+                <input type="text" class="standart-input" name="time" id="time" autocomplete="off" placeholder="12:59:58:000">
+                <button type="submit" class="standart-btn">Save</button>
+            </form>
+            <span>
+                Setted time: <span id="setted"></span>
+            </span>
+        </div>
+
+        <div class="item">
+            <form method="dialog">
+                <h3>Item link</h3>
+                <input type="text" class="standart-input" name="link" id="link" placeholder="nike.com/ru/launch/t/sb-dunk-low-pro-dark-grey" autocomplete="off">
+                <div class="twoInOne">
+                    <input type="text" name="size" id="size" autocomplete="off">
+                    <button>Us</button>
+                </div>
+            </form>
+            <div class="buttons">
+                <button type="submit" class="standart-btn">Save</button>
+                <button type="submit" class="standart-btn justify-self-end">Go to checkout</button>
+            </div>
+
+        </div>
+
+
+        
+    </section>
+
+    <section id="profiles">
+        profiles
+    </section>
+
+    <section id="settings" class="standartPadding">
+        settings
+    </section>
+
+    <script src="./popup1.js"></script>
+</body>
+</html>
