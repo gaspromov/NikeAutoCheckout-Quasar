@@ -1,0 +1,431 @@
+html{
+  padding: 10px;
+}
+
+body{
+  width: 550px;
+  height: 305px;
+  background-color: #191919;
+  margin: 0px;
+  color: white;
+  font-weight: bold;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+body *{
+  font-weight: bold;
+}
+
+h3{
+  text-align: center; 
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover, a:focus{
+  text-decoration: underline;
+}
+
+button{
+  cursor: pointer;
+}
+
+button:active{
+  outline: none;
+}
+
+button:focus{
+  outline: none;
+}
+
+.tabsBtn{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-items: center;
+  margin-bottom: 25px;
+}
+
+.tabsBtn button{
+  height: 31px;
+  width: 71px;
+  border: 2px solid #3498DB;
+  box-shadow: 0px 0px 10px 0px #3498DB;
+  background-color: #191919;
+  border-radius: 24px;
+  color: white;
+  transition: 0.20s;
+}
+
+.tabsBtn button:hover{
+  width: 100px;
+  
+}
+
+.tabsBtn button:active{
+  background-color: #fff;
+  outline: none;
+}
+
+.tabsBtn .active{
+  border-color: #2ECC71;
+  box-shadow: 0px 0px 10px 0px #2ECC71;
+}
+
+#formAdding{
+  display: grid;
+  grid-row-gap: 20px;
+}
+
+.card-personal{
+  display: grid;
+  justify-items: center;
+}
+
+.card-personal div{
+  display: grid;
+  justify-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 10px;
+}
+
+input, select, textarea{
+  width: 98px;
+  border-radius: 24px;
+  justify-self: center;
+  border: 2px solid #9E289A;
+  background-color: #191919;
+  color: white;
+  font-size: 10px;
+  height: 19px; 
+  box-sizing:border-box;
+  padding-bottom: 0px;
+  transition: 0.25s;
+}
+
+input:hover, select:hover, textarea:hover{
+  width: 135px;
+
+}
+
+#profileName{
+  border: none;
+  margin: 0px;
+  line-height: 18px;
+  border-radius: 0px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px #3498DB;
+  background-color: rgba(0, 0, 0, 0.0001);
+}
+
+#profileName::-webkit-input-placeholder{
+  text-align: center;
+}
+
+#profileName:focus{
+  border: none !important;
+}
+
+input:focus, select:focus, textarea:focus{
+  outline: none;
+  width: 135px;
+  box-shadow: 0px 0px 10px 0px #3498DB;
+  border: 2px solid #3498DB !important;
+}
+
+textarea{
+  width: 300px;
+  height: 90px;
+  overflow:  hidden;
+}
+
+textarea:focus,
+textarea:hover{
+  width: 340px;
+}
+
+
+input.invalid {
+  /* box-shadow: 0px 0px 10px 0px #ff0000 !important; */
+  border: 2px solid #ff0000 !important;
+}
+
+.invalid{
+  /* border-bottom: 2px solid #ff0000; */
+  border-bottom: 2px solid #ff0000 !important;
+}
+
+#nextBtn, .settingTime #setTime, #deleteProfile, #chooseProfile, .import-export button{
+  color: #2ECC71;
+  width: 73px;
+  height: 31px;
+  background-color: rgba(0, 0, 0, 0.0001);
+  border-radius: 24px;
+  border: 2px solid #2ECC71;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  transition: 0.25s;
+}
+
+#nextBtn:hover, .settingTime #setTime:hover, #deleteProfile:hover, #chooseProfile:hover, .import-export button:hover{
+  width: 90px
+}
+
+#nextBtn{
+  margin-right: 20px;
+}
+
+#prevBtn{
+  color: #686868;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+#prevBtn:hover{
+  color: #c0c0c0;
+}
+
+
+.settingProfile{
+  display: grid;
+  grid-row-gap: 10px;
+  justify-items: center;
+}
+
+.settingProfile div:last-child{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+  /* Hide all steps by default: */
+.step {
+  display: none;
+  /* height: 500px; */
+}
+
+.delivery{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+.delivery div{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 10px;
+}
+
+.tab{
+  display: none;
+  justify-items: center;
+}
+
+.settingTime{
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 15px;
+}
+
+.settingTime #setTime:hover{
+  color: rgb(0, 255, 106)
+}
+
+#deleteProfile{
+  color: #FF0000;
+  border-color: #ff0000;
+}
+
+.modal{
+  position: absolute;
+  left: 33%;
+  top: 40%;
+  padding: 30px 20px;
+  display: grid;
+  grid-row-gap: 10px;
+  justify-content: center;
+  border: 1px solid #2ECC71;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #2ECC71;
+  opacity: 80%;
+  background-color: #191919;
+}
+
+.modal .close-modal{
+  padding: 5px 15px;
+  justify-self: center;
+  background-color: #2ECC71;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#currentTime, #currentProfile{
+  color: #2ECC71;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.alert{
+  background-color: #191919;
+  color: #2ECC71;
+  padding: 10px 25px;
+  font-size: 13px;
+  position: absolute;
+  left: 38%;
+  top: 50%;
+  opacity: 90%;
+  display: none;
+}
+
+.import-export>div{
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 20px ;
+}
+
+.import-export>div>div{
+  display: grid;
+  grid-row-gap: 10px;
+  justify-items: center;
+}
+
+
+.import-export #data-export{
+  opacity: 0%;
+  height: 0px;
+  position: absolute;
+}
+
+.nameAutofill{
+  text-align: center;
+  font-size: small;
+  font-weight: bold;
+  width: 100%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  align-self: start;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #191919;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #5CDDD6;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #5CDDD6;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 13px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+.light{
+  background-color: #5CDDD6;
+}
+
+.light button{
+  background-color: #6CF2EB ;
+  border-color: white !important;
+  color: white !important; 
+  box-shadow: none !important;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.light input, .light select, .light textarea{
+  background-color: #5CDDD6;
+  border-color: white;
+  color: white ;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.light input:hover, .light select:hover, .light textarea:hover,
+.light input:focus, .light select:focus, .light textarea:focus{
+  text-shadow: 1px 10px 5px rgba(0, 0, 0, 0.4);
+  border-color: white !important;
+}
+
+.light input::placeholder{
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.light #currentProfile, .light #currentTime{
+  color: white;
+}
+
+.light #nextBtn{
+  box-shadow: none !important;
+}
+
+.light .modal{
+  border: 1px solid white;
+  opacity: 80%;
+  box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.3) !important;
+  background-color: #6CF2EB;
+}
+
+.light .modal .close-modal{
+  background-color: #5CDDD6;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.light .alert{
+  background-color: #6CF2EB;
+  color: white;
+  box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.3) !important;
+  opacity: 90%;
+}

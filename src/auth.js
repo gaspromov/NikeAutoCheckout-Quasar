@@ -14,15 +14,15 @@ async function auth(){
       body: this.key.value
   })
   .then( (w) => { console.log(w)
-    // window.location.href = "./popup1.html";
+    window.location.href = "./popup1.html";
   })
-  .catch( (e) => {}
-    // window.location.href = "./popup1.html"
+  .catch( (e) => 
+    window.location.href = "./popup1.html"
   )
 }
 
-// this.key.addEventListener('keyup', () => {
-//   maskKey(this.key, 16)
-// })
+this.key.addEventListener('keyup', () => {
+  maskKey(this.key, 16)
+})
 
 
