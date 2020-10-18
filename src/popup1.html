@@ -17,7 +17,7 @@
         </ul>
     </header>
 
-    <section id="release" class="active standartPadding">
+    <section id="release" class="standartPadding">
 
         <div class="checkoutTime">
             <form method="dialog">
@@ -26,22 +26,23 @@
                 <button type="submit" class="standart-btn">Save</button>
             </form>
             <span>
-                Setted time: <span id="setted"></span>
+                Setted time: <span id="settedTime"></span>
             </span>
         </div>
 
         <div class="item">
             <form method="dialog">
                 <h3>Item link</h3>
-                <input type="text" class="standart-input" name="link" id="link" placeholder="https://nike.com/ru/launch/t/sb-dunk-low-pro-dark-grey" autocomplete="off">
+                <h3>Size</h3>
+                <input type="text" class="standart-input" name="link" id="checkoutLink" placeholder="nike.com/ru/launch/t/sb-dunk-low-pro-dark-grey" autocomplete="off">
                 <div class="twoInOne">
-                    <input type="text" name="size" id="size" autocomplete="off">
-                    <button>Us</button>
+                    <input type="text" name="size" id="size" autocomplete="off" placeholder="10.5">
+                    <span class="typeSize">Us<span>
                 </div>
             </form>
             <div class="buttons">
-                <button type="submit" class="standart-btn">Save</button>
-                <button type="submit" class="standart-btn justify-self-end">Go to checkout</button>
+                <button type="submit" class="standart-btn" id="saveCheckout">Save</button>
+                <a target="_blank" class="standart-btn justify-self-end" id="checkout">Go to checkout</a>
             </div>
 
         </div>
@@ -50,12 +51,41 @@
         
     </section>
 
-    <section id="profiles">
-        profiles
+    <section id="profiles" class="active">
+        <div class="head-profiles">
+            <a class="standart-btn" href="./newProfile.html">New profile</a>
+            <input type="text" class="standart-input" placeholder="Search">
+        </div>
+
+        <div class="profiles">
+
+        </div>
     </section>
 
     <section id="settings" class="standartPadding">
-        settings
+        
+        <div class="webhook">
+            <form method="dialog">
+                <h3>Webhook</h3>
+                <input type="text" class="standart-input" id="webhook" placeholder="URL">
+                <button class="standart-btn">Save</button>
+            </form>
+        </div>
+
+        <div class="import">
+            <form method="dialog">
+                <h3>Import</h3>
+                <textarea name="import" class="standart-textarea" id="import" placeholder="Paste data"></textarea>
+                <button class="standart-btn standart-input justify-self-start"><img src="./assets/img/import.svg" alt="import"> Import</button>
+            </form>
+        </div>
+
+        <div class="export">
+            <h3>Export</h3>
+            <button class="standart-btn standart-input justify-self-start"><img src="./assets/img/export.svg" alt="export"> Export</button>
+            <textarea type="text" id="dataExport" class="hidden"></textarea>
+        </div>
+
     </section>
 
     <script src="./popup1.js"></script>

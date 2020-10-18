@@ -1,28 +1,33 @@
 const sendKey = document.getElementById('auth');
-const url = "https://quasarcook.com/api/v1/licenses/check"
+
+async function auth(){
+  answere = await checkKey(this.key.value);
+  if ( !answere.error && answere.license){
+      await chrome.storage.local.set({license_key: this.key.value})
+      window.location.href = './popup1.html';
+  }else{
+    console.log('Some problem');
+  }
+}
 
 sendKey.addEventListener( 'click', () =>{
     auth();
 })
-
-async function auth(){
-  await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: this.key.value
-  })
-  .then( (w) => { console.log(w)
-    window.location.href = "./popup1.html";
-  })
-  .catch( (e) => 
-    window.location.href = "./popup1.html"
-  )
-}
 
 this.key.addEventListener('keyup', () => {
   maskKey(this.key, 16)
 })
 
 
+
+// await fetch(url, {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({key: this.key.value})
+// })
+// .then( async (w) => { 
+// if (w.status == 200){
+// }
+// })

@@ -5,7 +5,7 @@ html, body{
 html{
     height: 550px;
     width: 400px;
-    background-color: #0f1d38;
+    background-color: #212B48;
 }
 body{
     height: 100%;
@@ -15,20 +15,34 @@ body{
     row-gap: 20px;
 }
 *{outline: none; color: white;}
+button, a{cursor: pointer; text-decoration: none;}
 div{box-sizing: border-box;}
 h1, h2, h3, ul, li{padding: 0;margin: 0;}
 ul{list-style: none;}
 .pointer{
     cursor: pointer;
 }
+input{padding: 0px;}
 h3{
     font-size: 18px;
     font-weight: 500;
 }
-.standart-btn{width:130px;height:30px;border-radius:30px;background-color:#3B5294;border:none;display:grid;place-items:center;font-size: 13px;font-weight:500;}
-.standart-input{height: 30px; border: 1.5px solid #3B5294; border-radius: 30px; background: none;box-sizing: border-box;padding-left: 10px; font-size: 11px;}
+.standart-btn{position: relative; width:130px !important;height:30px;border-radius:30px;background-color:#3B5294;border:none;display:grid;place-items:center;font-size: 13px !important;font-weight:500; transition: .3s; border: 1.5px solid #3B5294; box-sizing: border-box;}
+.standart-btn:hover{background: none;}
+.standart-btn:active{background: #2E3E6D;}
+.standart-input{position: relative; height: 30px; width: 100%; border: 1.5px solid #3B5294; border-radius: 30px; background: none;box-sizing: border-box;padding-left: 10px; font-size: 11px; transition: .3s;}
+button.standart-input:hover{ background-color: #3B5294;}
+button.standart-input:active{ background-color: #2E3E6D; border: 1.5px solid #2E3E6D; }
 .standartPadding{padding: 10px 40px}
+.standart-textarea{border: 1.5px solid #3B5294; height: 100px; display: grid; padding: 2px 5px;border-radius: 15px; background: none; box-sizing: border-box; font-size: 13px;}
 .justify-self-end{justify-self: end;}
+.justify-self-start{justify-self: start;}
+.none{display: none;}
+.hidden{
+  opacity: 0%;
+  height: 0px;
+  position: absolute;
+}
 .twoInOne{
     display: grid;
     position: relative;
@@ -58,6 +72,7 @@ header ul li{
     font-weight: 600;
     height: 100%;
     font-size: 18px;
+    transition: .2s;
 }
 header ul li:first-child{left: 0%; transform: translate(0%, 0%);}
 header ul li:nth-child(2){left: 50%; transform: translate(-50%, 0%);}
@@ -70,7 +85,9 @@ header ul li.active:last-child{border-radius: 30px 0px 0px 30px; padding-left: 2
 
 section{display: none;row-gap: 20px;align-items: start;}
 section.active{display: grid;}
-section#release{grid-template-rows: auto auto 1fr;}
+section#release, section#settings, section#profiles{grid-template-rows: auto auto 1fr;}
+section#profiles{padding: 0px 65px 10px; row-gap: 15px;}
+/* section#profiles>div{row-gap: 10px;} */
 
 section>div{
     display: grid;
@@ -81,21 +98,41 @@ section>div>form{
     row-gap: 5px;
 }
 
-.checkoutTime>form, .item>form{
+.checkoutTime>form, .item>form, .webhook>form{
     column-gap: 5px;
     grid-template-columns: 1fr auto;
 }
 .item>form{column-gap: 10px;}
-.checkoutTime h3, .item h3{
+.item .twoInOne{width: 60px}
+.item .twoInOne span{left: 5px; position: absolute; top: 50%; transform: translate(0%, -50%); font-size: 12px; line-height: 10px; text-transform: uppercase;}
+.item .twoInOne input{width: 30px; position: absolute; top: 50%; right: 5px; transform: translate(0%, -50%); font-size: 12px; text-align: center;}
+.checkoutTime h3, .webhook h3{
     grid-column: 1/3;
 }
 .checkoutTime>span{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 5px;
     font-size: 14px;
     font-weight: 500;
 }
-.checkoutTime .setted{font-weight: normal; text-decoration: underline;}
+.checkoutTime>span>span{font-weight: 400; text-decoration: underline;}
 .buttons{display: grid; grid-template-columns: 1fr 1fr;}
 
+.import button img, .export button img{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
 
+.head-profiles{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
 
-
+.profiles{
+    display: grid;
+    row-gap: 10px;
+}
