@@ -29,11 +29,12 @@ exportBtn.addEventListener('click', () => {
     else console.log('noExport');
 })
 importBtn.addEventListener('click', () =>{
-    if (importData(JSON.parse(this.import.value)))
+    if (importData(JSON.parse(this.import.value))){
         console.log('import');
+        outputAll();
+    }
     else console.log('noImport');
 })
-
 
 function checkAccess(){
     let answere;

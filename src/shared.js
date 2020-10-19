@@ -1,19 +1,45 @@
 const url = "https://quasarcook.com/api/v1/licenses/check";
 
-function maskKey(input, maxLength){
-    let newStr = '';
-    let value = input.value.split('-').join('');
-    let length = 0;
+function mask(input, maxLength, type, symbol, interval){
+
+  let library = '';
+  let newStr = '';
+  let value = input.value.split(symbol).join('');
+  let length = 0;
+
+  if (maxLength){
+    console.log('max')
     maxLength > value.length ? length = value.length : length = maxLength;
-    console.log(length)
-      for (let i = 0; i < length; i++){
-      newStr += value[i];
-      if ( (i+1) % 4 == 0 && i != 0 && i+1 != length){
-        newStr += '-';
-      }
+  }
+  else 
+    length = value.length;
+
+    
+  if (type == 'a')
+    library = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPWRSTUVWXYZ";
+  else if (type == '0')
+    library = '0123456789';
+  else if (type == 'A')
+    library = 'абвгдеёжзиклмнопрстуфхцчшщьыъэюяАБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPWRSTUVWXYZ';
+  else if (type == 'a0')
+    library = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPWRSTUVWXYZ0123456789';
+  else if (type == '*')
+    library = 'абвгдеёжзиклмнопрстуфхцчшщьыъэюяАБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPWRSTUVWXYZ0123456789'; 
+
+  console.log(length, library, type, maxLength, interval);
+
+  for (let i = 0; i < length; i++){
+    if ( library.indexOf(value[i]) == -1 ){
+      break;
     }
-    input.value = newStr;
-    return;
+    newStr += value[i];
+    if (symbol && (i+1) % interval == 0 && i != 0 && i+1 != length){
+      newStr += symbol;
+    }
+  }
+
+  input.value = newStr;
+  return;
 }
 
 function showTab(idTab){

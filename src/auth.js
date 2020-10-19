@@ -15,7 +15,7 @@ sendKey.addEventListener( 'click', () =>{
 })
 
 this.key.addEventListener('keyup', () => {
-  maskKey(this.key, 16)
+  mask(this.key, 16, 'a0', '-', 4)
 })
 
 

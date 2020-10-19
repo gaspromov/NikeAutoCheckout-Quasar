@@ -1,0 +1,59 @@
+.standartPadding{padding-top: 20px;}
+input{color: black;}
+.none{
+    display: none !important;
+}
+.standart-input, .standart-btn{border-radius: 0px;}
+
+main{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 15px;
+}
+
+.data{
+    display: grid;
+    row-gap: 25px;
+}
+
+.data>div{display: grid; row-gap: 10px;}
+.data>div:last-child{grid-template-columns: 1fr auto;}
+
+.columns-2{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+}
+
+.columns-2:first-child{grid-template-columns: 1fr 100px;}
+.columns-2.postCode{grid-template-columns: 1fr 100px;}
+.columns-2:last-child{grid-template-columns: 1fr 147px;}
+
+.head{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    cursor: pointer;
+}
+
+.head h2{
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+
+.inputs{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.inputs input, .inputs select{background-color: white; height: 30px; border: none; padding: 0px; padding-left: 10px; margin: 0px; width: 100%; box-sizing: border-box;}
+.inputs select{padding-left: 5px;}
+.payment .inputs{grid-template-columns: 180px 70px 50px;}
+
+
+
+
+.profileName{padding-top: 5px; display: grid; grid-template-columns: auto auto; column-gap: 10px;}

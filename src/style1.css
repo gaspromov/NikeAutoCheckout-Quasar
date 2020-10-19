@@ -23,6 +23,8 @@ ul{list-style: none;}
     cursor: pointer;
 }
 input{padding: 0px;}
+select, select option{color: black;}
+select:invalid { color: gray; }
 h3{
     font-size: 18px;
     font-weight: 500;
